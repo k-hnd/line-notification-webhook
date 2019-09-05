@@ -7,4 +7,4 @@ RUN apt-get update -y && \
     echo "ja_JP UTF-8" > /etc/locale.gen && \
     locale-gen && \
     pip install --no-cache-dir -r requirements.txt
-CMD ["gunicorn", "--bind", ":${PORT}", "--workers", "1", "--threads", "8", "app:webhook"]
+CMD ["gunicorn", "--bind", ":8080", "--workers", "1", "--threads", "8", "app:webhook"]
