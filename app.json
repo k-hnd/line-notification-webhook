@@ -1,0 +1,11 @@
+{
+  "name": "line-notification-webhook",
+  "env": {
+      "LINE_CHANNEL_ACCESS_TOKEN": {
+          "description": "LINE channel access token (long term)"
+      },
+      "LINE_USER_ID": {
+          "description": "LINE user ID to be notified"
+      }
+  }
+}
