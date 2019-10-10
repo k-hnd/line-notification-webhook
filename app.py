@@ -21,6 +21,8 @@ webhook = Flask(__name__)
 
 @webhook.route("/answer")
 def answer():
+    """Answer to the Ultimate Question of Life, the Universe, and Everything
+    """
     message = {"to": LINE_USER_ID, "messages": [{"type": "text", "text": "42"}]}
     res = requests.post(BASE_URL, json.dumps(message), headers=HEADER)
     return res.json()
@@ -28,6 +30,11 @@ def answer():
 
 @webhook.route("/api/v1/message")
 def message():
+    """notification to LINE
+
+    when you want to notify to LINE, request URL
+    e.g. GET /api/v1/message?status=active&count=5
+    """
     dic, keys = request.args, request.args.keys()
     message_text = ""
     for key in keys:
